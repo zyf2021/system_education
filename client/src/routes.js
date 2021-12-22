@@ -54,6 +54,9 @@ export const useRoutes = () =>  {
             <Route path = "/profile-page"  element =  
                 {<ProfilePage /> }
             /> 
+            <Route path = "/"  element =  
+                {<MainPage /> }
+            /> 
 
         </Routes>
     )

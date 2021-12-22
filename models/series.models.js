@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) =>{
-    const SeriesBooks = sequelize.define("series_books", {
+    const Series = sequelize.define("series", {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -11,9 +11,9 @@ module.exports = (sequelize, Sequelize) =>{
             unique:true
           }
     })
-    SeriesBooks.sync().then(() => {
-      console.log('table SeriesBooks created')
+    Series.sync().then(() => {
+      console.log('table Series created')
     })
-    return SeriesBooks
+    return Series
   }
   //{force: true}

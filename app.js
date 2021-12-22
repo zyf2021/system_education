@@ -1,6 +1,7 @@
 const express = require('express')
-const db = require('./models/index')
 const config = require('config')
+const db = require('./models/index')
+
 
 /*const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
@@ -15,6 +16,7 @@ db.authenticate()
 const app = express()
 
 app.get('/',(req,res) => res.send('INDEX'));
+app.use('/users', require('./routes/users.routes'))
 
 //app.use('/api/auth', require('./routes/auth.routes.js'))
 

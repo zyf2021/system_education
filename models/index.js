@@ -87,6 +87,7 @@ ThemesNews.hasMany(News)
 ThemesDocs.hasMany(Docs)
 
 Authors.hasMany(Books)
+Authors.hasMany(Series)
 
 Books.hasMany(Bookmarks)
 Books.hasOne(Settings)
