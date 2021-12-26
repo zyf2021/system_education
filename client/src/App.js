@@ -1,25 +1,30 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import {useRoutes} from './routes'
-import Header from './components/Header/Header'
-import SectionNavbars from './views/Components/Sections/SectionNavbars'
+import { AuthContext } from './context/AuthContext'
+import { useAuth } from './hooks/auth.hook'
+import {SectionNavbars} from './views/Components/Sections/SectionNavbars'
 import Footer from './components/Footer/Footer'
-
+//Routes
 
 import "./assets/scss/material-kit-react.scss?v=1.10.0";
 function App() {
-  const routes = useRoutes()
+  const {token, login, logout, userId} = useAuth()
+  const isAuthenticated = !!token
+  const routes = useRoutes(isAuthenticated)
   return (
-    <body>
+    <AuthContext.Provider value={{
+      token, login, logout, userId, isAuthenticated
+    }}>
       <Router>
-        <SectionNavbars color="rose"/>
-        <div className="container main">
-          {routes}
-        </div>
         
-        <Footer/>
+        { isAuthenticated && <SectionNavbars /> }
+          <div className="container main">
+            {routes}
+          </div>
+        { isAuthenticated && <Footer/> }
       </Router>
-    </body>
+    </AuthContext.Provider>
   );
 }
 

@@ -15,10 +15,6 @@ module.exports = (sequelize, Sequelize) =>{
       middle_name: {
             type: Sequelize.STRING
           },
-      email: {
-            type: Sequelize.STRING,
-            unique:true
-          },
       date_birth: {
             type: Sequelize.DATEONLY
 

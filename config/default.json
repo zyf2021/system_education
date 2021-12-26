@@ -2,5 +2,8 @@
     "port":5000,
     "baseUrl" : "http://192.168.43.176:5000/",
 
-    "baseUrl_3000" : "http://192.168.43.176:3000"
+    "baseUrl_3000" : "http://192.168.43.176:3000",
+    "jwtSecret":"key practice Zyf",
+    "cookiePassword": "some-secret-password-used-to-secure-cookie"
+
 }

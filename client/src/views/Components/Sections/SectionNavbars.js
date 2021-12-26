@@ -1,15 +1,13 @@
-import React from "react";
+import React, {useContext}  from "react"
+import {AuthContext} from '../../../context/AuthContext'
+import { useNavigate } from "react-router-dom"
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Search from "@material-ui/icons/Search";
-import Email from "@material-ui/icons/Email";
-import Face from "@material-ui/icons/Face";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Explore from "@material-ui/icons/Explore";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
@@ -25,8 +23,24 @@ import styles from "../../../assets/jss/material-kit-react/views/componentsSecti
 
 const useStyles = makeStyles(styles);
 
-export default function SectionNavbars() {
-  const classes = useStyles();
+export function SectionNavbars() {
+  const classes = useStyles()
+  const history = useNavigate()
+
+  const auth = useContext(AuthContext)
+
+  
+  const isAuthenticated = auth.isAuthenticated
+
+  const alertHandler = () => {
+    alert(auth.isAuthenticated)
+  }
+
+  const logoutHandler = event => {
+    event.preventDefault()
+    auth.logout()
+    history('/auth')
+  }
   return (
     <div className={classes.section}>
        <div id="navbar" className={classes.navbar}>
@@ -105,18 +119,22 @@ export default function SectionNavbars() {
             }
             rightLinks={
               <div>          
-                <ListItem className={classes.listItem}>
+                <ListItem className={classes.listItem} onClick={alertHandler}> 
                   <CustomDropdown
                     left
                     caret={false}
                     hoverColor="black"
                     dropdownHeader="Dropdown Header"
                     buttonText={
-                      <img
+                      <>
+                        <Button color="transparent" >Профиль</Button>
+                        <img
                         src={profileImage}
                         className={classes.img}
                         alt="profile"
                       />
+                        
+                      </>
                     }
                     buttonProps={{
                       className:
@@ -125,19 +143,27 @@ export default function SectionNavbars() {
                     }}
                     dropdownList={[
                       "Me",
-                      "Settings and other stuff",
-                      "Sign out",
+                      "Settings and other stuff"
                     ]}
                   />
                 </ListItem>
-                <ListItem className={classes.listItem}>
+                { !auth.isAuthenticated && <ListItem className={classes.listItem}>
                   <Button
                     href="/auth"
                     className={classes.navLink}
-                    //onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Вход
+                  </Button>
+                </ListItem>}
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="/"
+                    className={classes.navLink}
+                    onClick={logoutHandler}
+                    color="transparent"
+                  >
+                    Выход
                   </Button>
                 </ListItem>
               </div>
@@ -164,7 +190,7 @@ export default function SectionNavbars() {
                       className: classes.formControl,
                     }}
                     inputProps={{                      
-                      placeholder: "Search",                     
+                      placeholder: "Поиск",                     
                       inputProps: {
                         "aria-label": "Search",
                         className: classes.searchInput,

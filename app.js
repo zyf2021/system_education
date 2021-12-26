@@ -1,6 +1,7 @@
 const express = require('express')
 const config = require('config')
 const db = require('./models/index')
+const corsMiddleware = require('./middlewares/cors.middleware')
 
 
 /*const exphbs = require('express-handlebars');
@@ -15,8 +16,16 @@ db.authenticate()
 
 const app = express()
 
-app.get('/',(req,res) => res.send('INDEX'));
+app.get('/',(req,res) => res.send('INDEX'))
+
+//app.use(corsMiddleware)
+app.use(express.json({extended:true}))
+
+
+
+app.use('/auth', require('./routes/auth.routes'))
 app.use('/users', require('./routes/users.routes'))
+app.use('/admin',require('./routes/admin.routes'))
 
 //app.use('/api/auth', require('./routes/auth.routes.js'))
 

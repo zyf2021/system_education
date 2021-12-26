@@ -121,9 +121,9 @@ Tegs.belongsToMany(Books, {through:TegsBook})
 //const User = db.users
 //const Request_User = db.request_user
 
-//User.hasMany(Request_User)*/
-
-sequelize.sync({force:true}).then(()=>{
+//User.hasMany(Request_User)
+//{force:true}
+sequelize.sync().then(()=>{
  
   console.log("Tables have been created")
 }).catch(err=>console.log(err))

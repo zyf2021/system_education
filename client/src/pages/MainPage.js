@@ -30,9 +30,9 @@ export const MainPage = () => {
                     alt="Card-img-cap"
                 />
                 <CardBody>
-                    <h4 className={classes.cardTitle}>Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <Button color="primary">Do something</Button>
+                    <h4 className={classes.cardTitle}>Обновление книжного фонда</h4>
+                    <p>Последние обновления в книжном фонде</p>
+                    <Button color="primary">Читать подробнее</Button>
                 </CardBody>
             </Card>
         </GridItem>
@@ -45,9 +45,9 @@ export const MainPage = () => {
                     alt="Card-img-cap"
                 />
                 <CardBody>
-                    <h4 className={classes.cardTitle}>Card title</h4>
+                    <h4 className={classes.cardTitle}>Сосотоялось собрание книжного клуба</h4>
                     <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <Button color="primary">Do something</Button>
+                    <Button color="primary">Читать подробнее</Button>
                 </CardBody>
             </Card>
         </GridItem>
@@ -65,7 +65,7 @@ export const MainPage = () => {
                 <CardBody>
                     <h4 className={classes.cardTitle}>Card title</h4>
                     <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <Button color="primary">Do something</Button>
+                    <Button color="primary">Читать подробнее</Button>
                 </CardBody>
             </Card>
         </GridItem>
@@ -80,7 +80,7 @@ export const MainPage = () => {
                 <CardBody>
                     <h4 className={classes.cardTitle}>Card title</h4>
                     <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <Button color="primary">Do something</Button>
+                    <Button color="primary">Читать подробнее</Button>
                 </CardBody>
             </Card>
         </GridItem>

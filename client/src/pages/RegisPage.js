@@ -1,16 +1,8 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react'
-import {useHistory, useParams} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { useHttp } from '../hooks/http.hooks'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
-// core components
-import Header from "../components/Header/Header.js";
-import HeaderLinks from "../components/Header/HeaderLinks.js";
-import Footer from "../components/Footer/Footer.js";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
 import Button from "../components/CustomButtons/Button.js";
@@ -18,21 +10,43 @@ import Card from "../components/Card/Card.js";
 import CardBody from "../components/Card/CardBody.js";
 import CardHeader from "../components/Card/CardHeader.js";
 import CardFooter from "../components/Card/CardFooter.js";
-import CustomInput from "../components/CustomInput/CustomInput.js";
-
+import TextField from "@material-ui/core/TextField";
 import styles from "../assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "../assets/img/bg7.jpg";
+import axios from 'axios'
+
 
 const useStyles = makeStyles(styles);
 
-export function RegisPage(props) {
-  const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+export const RegisPage = () => {
+  const [form, setForm] = useState({
+      first_name: '', last_name:'', middle_name:'', email:'', password:''
+  })
+  const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
   }, 700);
+  
+
+  const changeHandler = event =>{
+    setForm({ ...form, [event.target.name]: event.target.value})
+  }
+    
+  const registerHandler = async () => {
+    try {
+      //const data = await request ('/api/auth/register', 'POST', {...form})
+     const data = await axios.post('/auth/register', JSON.stringify({...form}), {headers:{ 'Content-Type': 'application/json',
+      'Accept': 'application/json'}})
+      console.log('Data', {...form})
+      alert(data.data.message)
+    } catch (e) {
+      alert(e.response.data.message)     
+    }
+  }
   const classes = useStyles();
-  const { ...rest } = props;
+
+  
   return (
     <div>
 
@@ -45,7 +59,7 @@ export function RegisPage(props) {
         }}
       >
         <div className={classes.container}>
-          <GridContainer justify="center">
+          <GridContainer justifyContent="center">
             <GridItem xs={12} sm={12} md={6}>
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
@@ -53,73 +67,59 @@ export function RegisPage(props) {
                     <h3>Регистрация</h3>                     
                   </CardHeader>
                   <CardBody>
-                    <CustomInput
-                      labelText="Имя"
+                    <label>Имя</label>
+                    <TextField
                       id="first_name"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "text"
-                      }}
+                      name="first_name"
+                      type = "text"
+                      fullWidth
+                      value = {form.first_name}
+                      onChange = {changeHandler}
                     />
-                    <CustomInput
-                      labelText="Фамилия"
+                    <label>Фамилия</label>
+                    <TextField
                       id="last_name"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "text"
-                      }}
+                      name="last_name"
+                      fullWidth
+                  value = {form.last_name}
+                      onChange = {changeHandler}
                     />
-                    <CustomInput
-                      labelText="Отчество"
+                    <label>Отчество</label>
+                    <TextField
                       id="middle_name"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "text"
-                      }}
+                      name="middle_name"
+                  value = {form.middle_name}
+                      onChange = {changeHandler}
+                      fullWidth
                     />
-                    <CustomInput
-                      labelText="Email..."
+                    <label>Email</label>
+                    <TextField
                       id="email"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "email"
-                      }}
+                      name="email"
+                      value = {form.email}
+                      onChange = {changeHandler}
+                      fullWidth
                     />
-                    <CustomInput
+                    <label>Пароль</label>
+                    <TextField
                       labelText="Пароль"
-                      id="pass"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "password",
-                        autoComplete: "off",
-                      }}
-                    />
-                     <CustomInput
-                      labelText="Подтверждение пароля"
-                      id="pass"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "check_password",
-                        autoComplete: "off",
-                      }}
+                      id="password"
+                      name="password"
+                      type="password"
+                      value = {form.password}
+                      onChange = {changeHandler}
+                      fullWidth
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
+                    <Button 
+                      simple color="primary" 
+                      size="lg"
+                      onClick = {registerHandler} 
+                    >
                       Зарегистрироваться
                     </Button>
+                    <a href = "/auth">Вход</a>
                   </CardFooter>
                 </form>
               </Card>

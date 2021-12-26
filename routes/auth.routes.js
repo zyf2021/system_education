@@ -1,10 +1,10 @@
 const {Router} = require('express')
 const router = Router()
 
-const db = require('../models')
-const User = db.users
+const db = require('../models/index')
+const Users = db.Users
 
-const userControllers = require('../controllers/userController')
+//const userControllers = require('../controllers/userController')
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -19,7 +19,7 @@ router.post('/register',
         check('last_name', 'Введите фамилию').notEmpty(),
         check('middle_name', 'Введите отчество').notEmpty(),
         check('email', 'Некорректный email').isEmail(),
-        check('password','Минимальная длина пароля 6 символов').isLength({min:6})
+        check('password','Минимальная длина пароля 6 символов').isLength({min:6}),
     ],
     async (req, res) =>{
         try{
@@ -33,27 +33,26 @@ router.post('/register',
             //получаем поля их будем брать из models
             const {email, first_name, last_name, middle_name, password, role} = req.body
             
-            const candidate = await User.findOne({where:{email:email}})
+            const candidate = await Users.findOne({where:{email:email}})
             if(candidate){
                return res.status(400).json({message:'Такой пользователь уже существует'})
             }
             const hashedPassword = await bcrypt.hash(password,12)
             //const now = new Date()
             //SEQUALIZE!!!
-            //const user = new User({email, first_name, last_name, phone, password:hashedPassword, date_create:now})     
-            User.create({
-                f_name:first_name,
-                l_name:last_name,
-                m_name:middle_name,
+            Users.create({
+                first_name,
+                last_name,
+                middle_name,
                 email,
-                role:role,//"USER"
+                role:"ADMIN",
                 password:hashedPassword
             })
             res.status(201).json({message:'Пользователь создан'})
 
         }catch(e){
-            res.status(500).json({message: e.message})
-            
+            console.log(e.message)
+            res.status(500).json({message: e.message + "Ощибка на сервере"})   
         }
     }
 )
@@ -75,7 +74,7 @@ router.post('/login',
             const{email,password} = req.body
         
             //SEQUALIZE!!!
-            const user = await User.findOne({where:{email:email}})
+            const user = await Users.findOne({where:{email:email}})
 
             if(!user){
                 return res.status(400).json({message:'Пользователь не найден'})

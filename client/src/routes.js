@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Redirect } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { AuthPage } from './pages/AuthPage'
 import { BookInfoPage } from './pages/BookInfoPage'
 import { DocumentViewPage } from './pages/DocumentViewPage'
@@ -17,13 +17,13 @@ import {  } from './src/pages'
 import {  } from './src/pages'
 import {  } from './src/pages'*/
 
-export const useRoutes = () =>  {
-    return (
+export const useRoutes = (isAuthenticated) =>  {
+    if (isAuthenticated){
+        return(
         <Routes>
-            <Route path = "/auth" element = {<AuthPage />} />
-
-            <Route path = "/bookinfo" element = {<BookInfoPage />} />
-
+            <Route path = "/bookinfo"
+                element = {<BookInfoPage />} 
+            />
             <Route path = "/documentview" 
                 element = {<DocumentViewPage />}
             />
@@ -48,16 +48,18 @@ export const useRoutes = () =>  {
             <Route path = "/newsinfo"  element =  
                 {<NewsInfoPage />}
             />
-            <Route path = "/regis"  element =  
-                {<RegisPage /> }
-            /> 
             <Route path = "/profile-page"  element =  
                 {<ProfilePage /> }
             /> 
-            <Route path = "/"  element =  
-                {<MainPage /> }
+         </Routes>)     
+    }
+    return (
+        <Routes>
+            <Route path = "/auth" element = {<AuthPage />} />
+            <Route path = "/regis"  element =  
+                {<RegisPage /> }
             /> 
-
         </Routes>
     )
 }
+//<Navigate to ="/main"/>
