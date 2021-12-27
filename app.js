@@ -26,6 +26,7 @@ app.use(express.json({extended:true}))
 app.use('/auth', require('./routes/auth.routes'))
 app.use('/users', require('./routes/users.routes'))
 app.use('/admin',require('./routes/admin.routes'))
+app.use('/forums',require('./routes/forums.routes'))
 
 //app.use('/api/auth', require('./routes/auth.routes.js'))
 

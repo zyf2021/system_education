@@ -16,7 +16,7 @@ import CustomInput from "../../../components/CustomInput/CustomInput.js";
 import CustomDropdown from "../../../components/CustomDropdown/CustomDropdown.js";
 import Button from "../../../components/CustomButtons/Button.js";
 
-import image from "../../../assets/img/bg.jpg";
+import image from "../../../assets/img/bg0.jpg";
 import profileImage from "../../../assets/img/faces/avatar.jpg";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/navbarsStyle.js";
@@ -97,22 +97,12 @@ export function SectionNavbars() {
                 </ListItem>
                 <ListItem className={classes.listItem}>
                   <Button
-                    href="/forumlist"
+                    href="/forums"
                     className={classes.navLink}
                     //onClick={(e) => e.preventDefault()}
                     color="transparent"
                   >
                     Обсуждения
-                  </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    //onClick={(e) => e.preventDefault()}
-                    color="transparent"
-                  >
-                    Мероприятия
                   </Button>
                 </ListItem>
               </List>
@@ -176,7 +166,7 @@ export function SectionNavbars() {
                 <div style={{
                       marginTop: '10rem'
                       }} >
-                  <h1 className={classes.title}>Библиотека</h1>
+                  <h1 className={classes.title} style={{color:"#DC143C"}}>Библиотека</h1>
                 </div>
               </GridItem>
             </GridContainer>

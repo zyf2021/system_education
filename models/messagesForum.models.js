@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) =>{
       text: {
             type: Sequelize.TEXT
           },
-       application:{
+      application:{
            type:Sequelize.BLOB
        }   
     })

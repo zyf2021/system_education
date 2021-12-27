@@ -11,8 +11,7 @@ import Button from "../components/CustomButtons/Button.js";
 import Paginations from "../components/Pagination/Pagination.js";
 import imagesStyles from "../assets/jss/material-kit-react/imagesStyles.js";
 import image from "../assets/img/bg.jpg";
-import image1 from "../assets/img/bg.jpg";
-import image2 from "../assets/img/bg2.jpg";
+import image2 from "../assets/img/bg.jpg";
 import image3 from "../assets/img/bg3.jpg";
 import { cardTitle } from "../assets/jss/material-kit-react.js";
 import SectionCarousel from '../views/Components/Sections/SectionCarousel'
@@ -39,7 +38,7 @@ export const DocumentsPage = () => {
         <GridContainer justify="center">
             <GridItem xs={10} sm={10} md={6} lg={8}>
             <Card>
-                <h2>Документы</h2>
+                <h2 className={classes.cardTitle} style = {{margin:"2rem"}}>Документы</h2>
             </Card>
             </GridItem>
         </GridContainer> 

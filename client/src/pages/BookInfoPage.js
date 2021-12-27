@@ -12,7 +12,7 @@ import Star from '@material-ui/icons/Star';
 import ArrowLeft from '@material-ui/icons/ArrowLeft';
 import ArrowRight from '@material-ui/icons/ArrowRight';
 import Button from '../components/CustomButtons/Button.js';
-import file from '../assets/docs/kp.pdf'
+import file from '../assets/docs/js.pdf'
 import { Document, Page, pdfjs } from 'react-pdf'
 import styles from "../assets/jss/material-kit-react/customCheckboxRadioSwitch.js";
 
@@ -85,8 +85,8 @@ export const BookInfoPage = () => {
                     <GridItem xs={10} sm={10} md={10} lg ={5}>
                     <Card>
                         <CardHeader>
-                            <h3 className={card_classes.cardTitle}>Название книги</h3>
-                            <h5 className={card_classes.cardSubtitle}>Название главы</h5>
+                            <h3 className={card_classes.cardTitle}>Современный JS для нетерпеливых</h3>
+                            
                         </CardHeader>
                         <CardBody>
                             <Document

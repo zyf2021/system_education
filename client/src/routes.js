@@ -33,10 +33,10 @@ export const useRoutes = (isAuthenticated) =>  {
             <Route path = "/find"  element =  
                { <FindPage />}
             />
-            <Route path = "/forumlist"  element =  
+            <Route path = "/forums"  element =  
                 {<ForumListPage />}
             />
-            <Route path = "/forummessage"  element =  
+            <Route path = "/forums/:id"  element =  
                 {<ForumMessagePage />}
             />
             <Route path = "/main"  element =  

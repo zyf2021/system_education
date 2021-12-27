@@ -11,9 +11,9 @@ import Button from "../components/CustomButtons/Button.js";
 import Paginations from "../components/Pagination/Pagination.js";
 import imagesStyles from "../assets/jss/material-kit-react/imagesStyles.js";
 import image from "../assets/img/bg.jpg";
-import image1 from "../assets/img/bg.jpg";
-import image2 from "../assets/img/bg2.jpg";
-import image3 from "../assets/img/bg3.jpg";
+import image1 from "../assets/img/bg4.jpg";
+import image2 from "../assets/img/bg5.jpg";
+import image3 from "../assets/img/bg6.jpg";
 import { cardTitle } from "../assets/jss/material-kit-react.js";
 import SectionCarousel from '../views/Components/Sections/SectionCarousel'
 import GridItem from "../components/Grid/GridItem.js";
@@ -45,12 +45,10 @@ export const NewsPage = () => {
                     src={image1}
                     alt="First slide"
                     className="slick-image"
+                    width="50rem"
                 />
                 <div className="slick-caption">
-                    <h4>
-                    <LocationOn className="slick-icons" />Yellowstone
-                    National Park, United States
-                    </h4>
+                    
                 </div>
                 </div>
                 <div>
@@ -58,12 +56,10 @@ export const NewsPage = () => {
                     src={image2}
                     alt="Second slide"
                     className="slick-image"
+                    width="50rem"
                 />
                 <div className="slick-caption">
-                    <h4>
-                    <LocationOn className="slick-icons" />Somewhere Beyond,
-                    United States
-                    </h4>
+                    
                 </div>
                 </div>
                 <div>
@@ -71,12 +67,10 @@ export const NewsPage = () => {
                     src={image3}
                     alt="Third slide"
                     className="slick-image"
+                    width="50rem"
                 />
                 <div className="slick-caption">
-                    <h4>
-                    <LocationOn className="slick-icons" />Yellowstone
-                    National Park, United States
-                    </h4>
+                   
                 </div>
                 </div>
             </Carousel>
@@ -93,9 +87,9 @@ export const NewsPage = () => {
                         alt="Card-img-cap"
                     />
                     <CardBody>
-                        <h4 className={classes.cardTitle}>Card title</h4>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Button color="primary">Do something</Button>
+                        <h4 className={classes.cardTitle}>Обновление книжного фонда</h4>
+                        <p>Равным образом, новая модель организационной деятельности однозначно фиксирует необходимость кластеризации усилий. Разнообразный и богатый опыт говорит нам, что начало повседневной работы по формированию позиции не оставляет шанса для первоочередных требований. Современные технологии достигли такого уровня, что разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса своевременного выполнения сверхзадачи.</p>
+                        <Button color="primary">Читать подробнее</Button>
                     </CardBody>
                 </Card>
             </GridItem>
@@ -108,9 +102,9 @@ export const NewsPage = () => {
                         alt="Card-img-cap"
                     />
                     <CardBody>
-                        <h4 className={classes.cardTitle}>Card title</h4>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Button color="primary">Do something</Button>
+                        <h4 className={classes.cardTitle}>Собрание книжного клуба</h4>
+                        <p>Но активно развивающиеся страны третьего мира указаны как претенденты на роль ключевых факторов. Таким образом, высококачественный прототип будущего проекта в значительной степени обусловливает важность стандартных подходов. Для современного мира базовый вектор развития, в своём классическом представлении, допускает внедрение стандартных подходов. Банальные, но неопровержимые выводы, а также явные признаки победы институционализации освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, ассоциативно распределены по отраслям.</p>
+                        <Button color="primary">Читать подробнее</Button>
                     </CardBody>
                 </Card>
             </GridItem>
@@ -123,9 +117,9 @@ export const NewsPage = () => {
                         alt="Card-img-cap"
                     />
                     <CardBody>
-                        <h4 className={classes.cardTitle}>Card title</h4>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Button color="primary">Do something</Button>
+                        <h4 className={classes.cardTitle}>Собрание книжного клуба</h4>
+                        <p>Some quick example text to build on the Собрание книжного клуба and make up the bulk of the card's content.</p>
+                        <Button color="primary">Читать подробнее</Button>
                     </CardBody>
                 </Card>
             </GridItem>
@@ -140,9 +134,9 @@ export const NewsPage = () => {
                         alt="Card-img-cap"
                     />
                     <CardBody>
-                        <h4 className={classes.cardTitle}>Card title</h4>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Button color="primary">Do something</Button>
+                        <h4 className={classes.cardTitle}>Собрание книжного клуба</h4>
+                        <p>Some quick example text to build on the Собрание книжного клуба and make up the bulk of the card's content.</p>
+                        <Button color="primary">Читать подробнее</Button>
                     </CardBody>
                 </Card>
             </GridItem>
@@ -155,9 +149,9 @@ export const NewsPage = () => {
                         alt="Card-img-cap"
                     />
                     <CardBody>
-                        <h4 className={classes.cardTitle}>Card title</h4>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Button color="primary">Do something</Button>
+                        <h4 className={classes.cardTitle}>Собрание книжного клуба</h4>
+                        <p>Some quick example text to build on the Собрание книжного клуба and make up the bulk of the card's content.</p>
+                        <Button color="primary">Читать подробнее</Button>
                     </CardBody>
                 </Card>
             </GridItem>
@@ -170,9 +164,9 @@ export const NewsPage = () => {
                         alt="Card-img-cap"
                     />
                     <CardBody>
-                        <h4 className={classes.cardTitle}>Card title</h4>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Button color="primary">Do something</Button>
+                        <h4 className={classes.cardTitle}>Собрание книжного клуба</h4>
+                        <p>Some quick example text to build on the Собрание книжного клуба and make up the bulk of the card's content.</p>
+                        <Button color="primary">Читать подробнее</Button>
                     </CardBody>
                 </Card>
             </GridItem>
