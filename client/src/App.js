@@ -3,11 +3,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import {useRoutes} from './routes'
 import { AuthContext } from './context/AuthContext'
 import { useAuth } from './hooks/auth.hook'
-import {SectionNavbars} from './views/Components/Sections/SectionNavbars'
-import Footer from './components/Footer/Footer'
+
 //Routes
 
-import "./assets/scss/material-kit-react.scss?v=1.10.0";
+
 function App() {
   const {token, login, logout, userId} = useAuth()
   const isAuthenticated = !!token
@@ -18,11 +17,11 @@ function App() {
     }}>
       <Router>
         
-        { isAuthenticated && <SectionNavbars /> }
+        { isAuthenticated }
           <div className="container main">
             {routes}
           </div>
-        { isAuthenticated && <Footer/> }
+        { isAuthenticated }
       </Router>
     </AuthContext.Provider>
   );
