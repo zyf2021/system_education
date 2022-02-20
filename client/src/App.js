@@ -3,13 +3,15 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import {useRoutes} from './routes'
 import { AuthContext } from './context/AuthContext'
 import { useAuth } from './hooks/auth.hook'
+import {MainMenu} from './components/MainMenu'
+import {Footer} from './components/Footer'
 
-//Routes
+
 
 
 function App() {
   const {token, login, logout, userId} = useAuth()
-  const isAuthenticated = !!token
+  const isAuthenticated = true //!!token
   const routes = useRoutes(isAuthenticated)
   return (
     <AuthContext.Provider value={{
@@ -17,11 +19,11 @@ function App() {
     }}>
       <Router>
         
-        { isAuthenticated }
+        { isAuthenticated && <MainMenu/> }
           <div className="container main">
             {routes}
           </div>
-        { isAuthenticated }
+        { isAuthenticated && <Footer />}
       </Router>
     </AuthContext.Provider>
   );

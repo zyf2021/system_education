@@ -3,8 +3,10 @@ import {useHistory, useParams} from 'react-router-dom'
 
 export const MainPage = () => {
 
-    return( 
+    return(
+        <>
         
         <>Главная страница</> 
+        </> 
     )
 }
