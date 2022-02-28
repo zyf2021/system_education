@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Container, Grid, Box, Card, CardHeader, CardContent, CardActions, Button} from "@material-ui/core";
 import {useNavigate } from 'react-router-dom'
 import axios from "axios";
-
 
 export const ForumListPage = () => {
     const navigate = useNavigate()
@@ -36,7 +36,38 @@ export const ForumListPage = () => {
     }
 
   return (
-      <>Список форумов</>
+    <Container maxWidth='md'>
+      <Grid container spacing={2} maxWidth='100%'>
+        <Grid item xs={12} md={12} lg={12}>
+          <Box>Заголовок</Box>
+        </Grid>
+        <Grid item xs = {12}>
+          <Card>
+            <CardHeader
+            title="Название форума"
+            subheader="dd/mm/yyyy"
+            />
+            <CardContent>Описание</CardContent>
+            <CardActions>
+              <Button size="large">Перейти</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs = {12}>
+          <Card>
+            <CardHeader
+            title="Название форума"
+            subheader="dd/mm/yyyy"
+            />
+            <CardContent>Описание</CardContent>
+            <CardActions>
+              <Button size="large">Перейти</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
+    </Container>
+
   );
 
 }
