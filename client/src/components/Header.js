@@ -35,6 +35,7 @@ export function Header(props) {
           Sign up
         </Button>
       </Toolbar>
+      
       <Toolbar
         component="nav"
         variant="dense"
