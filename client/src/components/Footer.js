@@ -1,38 +1,27 @@
 import React from 'react';
 import {Grid,Box,Container, Link, Typography} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
+import { maxWidth } from '@mui/system';
 
-var style = {
+const useStyles = makeStyles((theme) => ({
+  footer:{
+    background: "lightblue",
     borderTop: "1px solid #E7E7E7",
+    fontcolor: "white",
+    marginTop: '1%',
+    maxWidth:"100%",
     textAlign: "center",
-    padding: "20px",
-    position: "fixed",
-    left: "0",
-    bottom: "0",
-    height: "10%",
-    width: "100%",
-}
-
-var phantom = {
-  display: 'block',
-  padding: '20px',
-  height: '60px',
- }
-
-
+  }
+}))
 
 export const Footer = () => {
+  const classes = useStyles();
   return (
-    <footer>
-      <div style={phantom}/>
-      <Container  style = {style}>
-        <Grid container spacing={5} >
-            <Grid items xs={12} sm={4} >
-                
-            </Grid>
-            <Grid items xs={12} sm={4} >
-                <Typography color="textSecondary" component="p" variant="caption" gutterBottom={false}>Система обучения</Typography>
-            </Grid>
-        </Grid>
+    <footer className={classes.footer}>
+      <Container >
+        <Typography align="center" gutterBottom>
+          Система обучения
+        </Typography>
       </Container>
     </footer>
   );
