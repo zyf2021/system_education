@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react'
 import {useHistory, useParams} from 'react-router-dom'
-import {Button, Card, CardHeader, CardContent, CardActionArea, Grid,IconButton, Box, Container, Link, Typography, CardActions, CardMedia, Slider} from '@material-ui/core'
+import {Button, Card, CardHeader, CardContent, CardActions, CardMedia, CardActionArea, Grid, IconButton, Box, Container, Link, Typography, Slider} from '@material-ui/core'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import Menu from '@material-ui/icons/Menu'
@@ -35,8 +35,8 @@ export const BookInfoPage = () => {
       }
     
     return(   
-        <Container maxWidth="lg" justify="center">
-            <Grid justify="center" sm ={12} md = {10} lg ={8}>
+        <Container maxWidth="xl" justify="center">
+            <Grid container justify="center" sm ={12} md = {12} lg ={12}>
                 <Card>
                     <CardActions disableSpacing>
                     <IconButton aria-label="questions">
