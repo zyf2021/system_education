@@ -31,6 +31,9 @@ export const useRoutes = (isAuthenticated) =>  {
             <Route path = "/main"  element =  
                 {<MainPage />}
             />
+            <Route path = "/*"  element =  
+                {<MainPage />}
+            />
          </Routes>)     
     }
     return (

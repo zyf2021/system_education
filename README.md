@@ -6,6 +6,11 @@ https://www.figma.com/proto/btZCGscyMMkLkblRCLec0W/Untitled?page-id=0%3A1&node-i
 
 - [X] Фронт - удален
 - [ ] Базу данных переписать
+
+* Ссылка на слайдер
+https://reactjsexample.com/easy-to-use-responsive-and-customizable-carousel-component-for-react/
+
+
 ## Перед установкой
 Перед началом работы необходимо создать пустую базу данных MySQL 
 ```

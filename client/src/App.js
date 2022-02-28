@@ -13,7 +13,7 @@ import {Footer} from './components/Footer'
 
 function App() {
   const {token, login, logout, userId} = useAuth()
-  const isAuthenticated = false //!!token
+  const isAuthenticated = true //!!token
   const routes = useRoutes(isAuthenticated)
   return (
     <AuthContext.Provider value={{
@@ -21,7 +21,7 @@ function App() {
     }}>
       <Router>
         
-        { isAuthenticated && <Header/> && <MainFeaturedPost/>}
+        { isAuthenticated && <MainMenu/>}
           
           <div className="container main">
             {routes}
