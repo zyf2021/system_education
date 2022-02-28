@@ -33,23 +33,19 @@ export function MainMenu() {
 
   return (
     <AppBar position="static" elevation = {0}> 
-      <Container maxWidth="xl">
+      <Container maxWidth="md">
         <Toolbar>
-        <Box sx={{flexGrow: 1, display: 'flex', justifyContent:'space-between', width:'100%', aligh:'center'}} component = 'div'>
-          <Box sx={{display:'flex'}}>
-            <IconButton>
-              <MenuIcon sx={{color:'white'}} fontSize='large'/>
-            </IconButton>
-          </Box>
+        <Box sx={{flexGrow: 1, display: 'flex', justifyContent:'right', width:'100%', aligh:'center'}} component = 'div'>
+
 
           <Box sx={{display:'flex'}}>
-            <div style={{marginRight:'10px'}}>
+            <div style={{marginRight:'10px', paddingTop:'5px'}}>
             <Typography 
-            aria-aria-controls='edu-menu'
-            aria-aria-haspopup='true'
-            aria-aria-expanded={openMenu ? 'true' : undefined}
-            onClick = {handleOpenUserMenu}
-            sx = {{cursor:'pointer', color:'inherit'}}>
+              aria-aria-controls='edu-menu'
+              aria-aria-haspopup='true'
+              aria-aria-expanded={openMenu ? 'true' : undefined}
+              onClick = {handleOpenUserMenu}
+              sx = {{cursor:'pointer', color:'inherit'}}>
               ОБУЧЕНИЕ
             </Typography>
             <Menu id = 'edu-menu' anchorEl={anchorElUser} open={openMenu} onClose={handleCloseUserMenu} width='20px'>
@@ -58,14 +54,14 @@ export function MainMenu() {
             </Menu>
             </div>
 
-            <div style={{marginRight:'10px'}}>
+            <div style={{marginRight:'10px', paddingTop:'5px'}}>
             <Typography
             sx = {{marginRight:'10px', cursor:'pointer', color:'inherit'}}>
               ПРАКТИКА
             </Typography>
             </div>
           
-            <div style={{marginRight:'10px'}}>
+            <div style={{marginRight:'10px', paddingTop:'5px'}}>
             <Typography
             sx = {{marginRight:'10px', cursor:'pointer', color:'inherit'}}>
               РАБОТА
